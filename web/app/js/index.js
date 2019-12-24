@@ -62,8 +62,9 @@ class App extends React.Component {
     };
 
     this.state.checkNamespaceMatch = path => {
+      let { selectedNamespace } = this.state;
       let pathNamespace = path.split("/")[2];
-      if (pathNamespace && pathNamespace !== this.state.selectedNamespace) {
+      if (pathNamespace && pathNamespace !== selectedNamespace) {
         this.setState({selectedNamespace:pathNamespace});
       }
     };
